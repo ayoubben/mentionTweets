@@ -11,5 +11,11 @@ body
     .row
       .col-md-2
       .col-md-8
+        - if notice
+          p.bg-success
+            = notice
+        - if alert
+          p.bg-danger
+            = alert
         == yield
       .col-md-2

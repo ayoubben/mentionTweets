@@ -11,9 +11,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to mentions_path }
+        format.html { redirect_to mentions_path, notice: 'Comment was successfully created.'  }
       else
-        format.html { render :new }
+        format.html { redirect_to mentions_path, alert: 'Comment NOT created.'  }
       end
     end
   end
