@@ -1,0 +1,27 @@
+.row.bg-primary
+  .col-md-12
+    h2.strong.text-white
+      | Mention tweets
+- @mentions.each do |mention|
+    .row.well
+      .col-md-1
+        = image_tag( mention.image_path)
+      .col-md-11
+        .col-md-10
+          strong.text-info
+            = mention.owner
+        .col-md-2
+          = time_ago_in_words(mention.tweet_created_at)
+        .col-md-12
+          = mention.text
+
+        - if mention.comment.nil?
+          .col-md-10
+          .col-md-2
+            i.btn.btn-default.fa.fa-retweet
+              = link_to 'reply', new_comment_path(mention: mention.id)
+        - else
+          = mention.comment.text
+          br
+
+= link_to 'Get Mention', hold_mentions_path, id: 'new_link', remote: true
