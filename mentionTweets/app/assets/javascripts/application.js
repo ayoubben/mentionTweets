@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require mentions
+//= require comments
 //= require_tree .

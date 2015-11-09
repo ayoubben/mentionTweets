@@ -18,11 +18,15 @@
   .col-md-12
     = form_for(@comment) do |f|
       .form-group
-        = f.text_area :text, rows: 5, placeholder:'Your Text Here ...', class: 'form-control'
+        = f.text_area :text, rows: 5, placeholder:'Your Text Here ...', class: 'form-control', id: 'inputField'
         = f.hidden_field :mention_id, value: @mention.id
         br
         = f.submit 'reply', class: 'btn btn-info fa fa-reply fa-2x'
-        .pull-right
-          | 140 characters remaining
+        span.pull-right
+          span.text-primary.strong
+            | characters remaining :
+          span.counter.strong
+            |  140
+= link_to 'Back', mentions_path
 
 
