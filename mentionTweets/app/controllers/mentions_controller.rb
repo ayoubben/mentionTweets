@@ -6,10 +6,10 @@ class MentionsController < ApplicationController
 
   def hold
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = '8dFq6kFt2UyrzUjLcza2bozh0'
-      config.consumer_secret     = 'EINLOHvnOeYDkZY1ZFWQYtL2ZM6FSY67drXPOAqaXI8HGi6XBl'
-      config.access_token        = '253712891-RweY3HWJtjRQacatizVio3gAOAxG3T5FNwYCG2fi'
-      config.access_token_secret = 'YerIKljdjtXzXfSasE8OuJFchGip8nSVs5pSllszkuUWf'
+      config.consumer_key        = ENV["CONSUMER_KEY"]
+      config.consumer_secret     = ENV["CONSUMER_SECRET"]
+      config.access_token        = ENV["ACCESS_TOKEN"]
+      config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
     end
     @tweets = @client.mentions_timeline
     @tweets.each do |tweet|
