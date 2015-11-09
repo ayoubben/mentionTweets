@@ -18,8 +18,8 @@
         - if mention.comment.nil?
           .col-md-10
           .col-md-2
-            i.btn.btn-default.fa.fa-retweet
-              = link_to 'reply', new_comment_path(mention: mention.id)
+            i.btn.btn-info.fa.fa-reply.fa-2x
+              = link_to '', new_comment_path(mention: mention.id)
         - else
           = mention.comment.text
           br
