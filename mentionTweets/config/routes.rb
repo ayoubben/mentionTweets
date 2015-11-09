@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'mentions#index'
+  resources :mentions do
+    collection do
+      get "/hold", to: "mentions#hold"
+    end
+  end
+  resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
