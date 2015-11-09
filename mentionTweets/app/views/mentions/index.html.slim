@@ -18,8 +18,7 @@
         - if mention.comment.nil?
           .col-md-10
           .col-md-2
-            i.btn.btn-info.fa.fa-reply.fa-2x
-              = link_to '', new_comment_path(mention: mention.id)
+            = link_to '', new_comment_path(mention: mention.id), class: 'btn btn-info fa fa-reply fa-2x'
         - else
           = mention.comment.text
           br
